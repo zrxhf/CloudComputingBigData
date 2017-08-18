@@ -24,7 +24,7 @@ public class LetterMapper extends Mapper<LongWritable, Text, Text, IntWritable> 
 		for (String word : line.split("\\W+")) {
 			if (word.length() > 0) {
 				char firstChar = word.charAt(0);
-				if (caseS == false && firstChar >= 'A' && firstChar <= 'Z') {
+                if (caseS == false && firstChar >= 'A' && firstChar <= 'Z') {
 					context.write(
 							new Text(Character
 									.toString((char) (firstChar + 32))),
